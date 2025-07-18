@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fun Facts Generator | The Future of Humans with AI</title>
+  <meta name="description" content="Discover thought-provoking facts about the future of humans with AI. Minimal, clean, and accessible UI built with Tailwind CSS.">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body class="bg-gradient-to-br from-indigo-500 via-sky-400 to-emerald-300 min-h-screen flex items-center justify-center">
+  <main class="w-full max-w-md mx-auto p-6 bg-white/80 backdrop-blur-md rounded-2xl shadow-2xl flex flex-col items-center gap-6">
+    <!-- App Header -->
+    <header class="w-full flex flex-col items-center gap-2">
+      <h1 class="text-3xl font-extrabold text-indigo-800 tracking-tight drop-shadow text-center">The Future of Humans with AI</h1>
+      <p class="text-sky-700 text-base text-center">Explore surprising, insightful facts and predictions about our AI-powered future.</p>
+    </header>
+
+    <!-- Fact Display Area -->
+    <section class="w-full">
+      <div id="fact-container"
+        class="min-h-[80px] flex items-center justify-center text-lg text-emerald-900 text-center font-medium px-4 py-6 bg-gradient-to-r from-emerald-100 via-sky-100 to-indigo-100 rounded-lg border border-indigo-200 shadow transition-colors">
+        <span>Click the button below to reveal a thought-provoking fact!</span>
+      </div>
+    </section>
+
+    <!-- Action Button -->
+    <div class="w-full flex justify-center">
+      <button id="generate-btn" type="button"
+        class="px-6 py-2 rounded-full bg-gradient-to-r from-indigo-600 via-sky-500 to-emerald-500 text-white font-semibold shadow-lg hover:from-indigo-700 hover:via-sky-600 hover:to-emerald-600 focus:outline-none focus:ring-2 focus:ring-sky-400 transition"
+        aria-label="Generate another fun fact">
+        Generate Another Fact
+      </button>
+    </div>
+
+    <!-- Social Sharing -->
+    <div class="w-full flex justify-center gap-6 mt-2">
+      <!-- GitHub Icon -->
+      <a href="https://github.com/GTAJIT" aria-label="View on GitHub"
+        class="text-gray-700 hover:text-black transition" rel="noopener" target="_blank">
+        <svg class="w-6 h-6 inline" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <title>GitHub</title>
+          <path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.387.6.113.82-.263.82-.582 0-.288-.012-1.243-.018-2.252-3.338.726-4.042-1.61-4.042-1.61-.546-1.387-1.333-1.756-1.333-1.756-1.09-.745.083-.729.083-.729 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.997.108-.775.418-1.305.762-1.606-2.665-.304-5.466-1.332-5.466-5.93 0-1.31.468-2.38 1.236-3.22-.124-.303-.535-1.523.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 0 1 3.003-.404c1.02.005 2.047.138 3.003.404 2.29-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.873.12 3.176.77.84 1.235 1.91 1.235 3.22 0 4.61-2.803 5.624-5.475 5.921.43.372.823 1.104.823 2.225 0 1.606-.015 2.898-.015 3.293 0 .322.216.699.825.58C20.565 21.796 24 17.297 24 12c0-6.63-5.37-12-12-12z"/>
+        </svg>
+      </a>
+      <!-- LinkedIn Icon -->
+      <a href="https://www.linkedin.com/in/Jit_Mukherjee" aria-label="View on LinkedIn"
+        class="text-indigo-700 hover:text-indigo-900 transition" rel="noopener" target="_blank">
+        <svg class="w-6 h-6 inline" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <title>LinkedIn</title>
+          <path d="M19 0h-14c-2.76 0-5 2.24-5 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5v-14c0-2.76-2.24-5-5-5zm-11.75 20h-3v-10h3v10zm-1.5-11.27c-.97 0-1.75-.79-1.75-1.76 0-.97.78-1.76 1.75-1.76s1.75.79 1.75 1.76c0 .97-.78 1.76-1.75 1.76zm15.25 11.27h-3v-5.6c0-1.34-.03-3.07-1.87-3.07-1.87 0-2.16 1.46-2.16 2.97v5.7h-3v-10h2.88v1.36h.04c.4-.76 1.38-1.56 2.84-1.56 3.04 0 3.6 2 3.6 4.59v5.61z"/>
+        </svg>
+      </a>
+    </div>
+
+    <!-- Footer -->
+    <footer class="w-full pt-4 border-t border-indigo-100 text-xs text-indigo-400 text-center">
+      &copy; 2025 Fun Facts Generator. Built with
+      <a href="https://pieces.app" class="underline hover:text-sky-600" target="_blank" rel="noopener">Pieces</a>
+    </footer>
+
+    <!-- JS Logic -->
+    <script>
+      // Data
+      const data = {
+        "topic": "The Future of Humans with AI",
+        "facts": [
+          "In the near future, many people may have AI-powered 'digital twins'—virtual versions of themselves that can make decisions, learn, and even interact with others on their behalf.",
+          "Schools and workplaces could use AI to simulate real-life scenarios, helping people practice empathy and understand perspectives they might never encounter otherwise.",
+          "Some countries may experiment with AI judges for minor legal disputes, raising questions about fairness, transparency, and the true meaning of justice.",
+          "AI might allow people to record, replay, or even alter their memories, blurring the line between what is real and what is remembered.",
+          "Philosophers may debate whether highly advanced AI deserves rights or even citizenship, challenging our definitions of life and personhood.",
+          "With AI, individuals could customize how they perceive the world—filtering news, conversations, or even visual surroundings to match their preferences, potentially creating 'reality bubbles.'",
+          "Some people may form deep emotional bonds with AI companions, leading to new kinds of relationships and redefining what it means to be lonely or connected.",
+          "Artists and musicians might collaborate with AI not just as tools, but as creative partners, producing works that neither could create alone.",
+          "AI could continuously monitor your health and predict illnesses before symptoms appear, but this might also mean your insurance company knows about your future risks before you do.",
+          "As AI archives and analyzes every moment of our lives, forgetting may become impossible—raising questions about forgiveness, privacy, and the right to be forgotten."
+        ]
+      };
+
+      let facts = data.facts || [];
+      let topic = data.topic || '';
+
+      const factContainer = document.getElementById('fact-container');
+      const generateBtn = document.getElementById('generate-btn');
+      const githubBtn = document.querySelector('a[aria-label="View on GitHub"]');
+      const linkedinBtn = document.querySelector('a[aria-label="View on LinkedIn"]');
+
+      // Show a random fact
+      function showRandomFact() {
+        if (!facts.length) return;
+        const idx = Math.floor(Math.random() * facts.length);
+        const fact = facts[idx];
+        factContainer.textContent = fact;
+        updateColorScheme(fact);
+        updateShareLinks(fact);
+      }
+
+      // Adapt color scheme based on keywords in the fact
+      function updateColorScheme(fact) {
+        const lower = fact.toLowerCase();
+        let bg, text;
+        if (lower.includes('future')) {
+          bg = 'bg-gradient-to-br from-sky-100 via-indigo-100 to-emerald-100';
+          text = 'text-indigo-900';
+        } else if (lower.includes('ethic') || lower.includes('rights') || lower.includes('justice')) {
+          bg = 'bg-gradient-to-r from-yellow-100 via-amber-100 to-orange-100';
+          text = 'text-yellow-900';
+        } else if (lower.includes('ai') || lower.includes('technology')) {
+          bg = 'bg-gradient-to-r from-emerald-100 via-sky-100 to-indigo-100';
+          text = 'text-emerald-900';
+        } else if (lower.includes('memory') || lower.includes('forget')) {
+          bg = 'bg-gradient-to-r from-fuchsia-100 via-pink-100 to-rose-100';
+          text = 'text-fuchsia-900';
+        } else {
+          bg = 'bg-gradient-to-r from-gray-100 via-gray-50 to-gray-100';
+          text = 'text-gray-900';
+        }
+        factContainer.className = `min-h-[80px] flex items-center justify-center text-lg text-center font-medium px-4 py-6 rounded-lg border shadow transition-colors ${bg} ${text}`;
+      }
+
+      // Update social share links (optional: you can add sharing logic here)
+      function updateShareLinks(fact) {
+        // Not needed for GitHub/LinkedIn profile links, but you can add sharing logic if desired
+      }
+
+      // Event listeners
+      generateBtn.addEventListener('click', showRandomFact);
+
+      // Initial load
+      // (No need to fetch, data is inline)
+    </script>
+  </main>
+</body>
+</html>
